@@ -61,3 +61,6 @@ class Solution {
     }
 }
 ```
+
+## References :
+https://github.com/eMahtab/longest-substring-with-at-most-two-distinct-characters
