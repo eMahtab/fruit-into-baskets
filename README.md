@@ -36,3 +36,5 @@ If we had started at the first tree, we would only pick from trees [1,2].
 ## Constraints:
 1. 1 <= fruits.length <= 10^5
 2. 0 <= fruits[i] < fruits.length
+
+## Implementation : Sliding Window (Exact same as Longest Substring with at most 2 distinct characters)
