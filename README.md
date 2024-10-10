@@ -38,3 +38,26 @@ If we had started at the first tree, we would only pick from trees [1,2].
 2. 0 <= fruits[i] < fruits.length
 
 ## Implementation : Sliding Window (Exact same as Longest Substring with at most 2 distinct characters)
+```java
+class Solution {
+    public int totalFruit(int[] fruits) {
+        if(fruits.length <= 2)
+         return fruits.length;
+
+        HashMap<Integer,Integer> treeTypeToIndexMap = new HashMap<>();
+        int left = 0;
+        int maxFruits = 2;
+        for(int i = 0; i < fruits.length; i++) {
+            treeTypeToIndexMap.put(fruits[i], i);
+            if(treeTypeToIndexMap.size() > 2) {
+                int indexOfTreeTypeToRemove = Collections.min(treeTypeToIndexMap.values());
+                treeTypeToIndexMap.remove(fruits[indexOfTreeTypeToRemove]);
+                left = indexOfTreeTypeToRemove + 1;
+            }
+            int fruitsCollected = i - left + 1;
+            maxFruits = Math.max(maxFruits, fruitsCollected);
+        } 
+        return maxFruits;
+    }
+}
+```
